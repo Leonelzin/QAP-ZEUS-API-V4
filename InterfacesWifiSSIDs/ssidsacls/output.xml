@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.7 on linux)" generated="20221209 10:54:33.723" rpa="false" schemaversion="3">
+<suite id="s1" name="GET-interfaces wifi ssids acls" source="/home/Leonel/QAP TA - Tests/api-v4-tests/src/tests/InterfacesWifiSSIDs/ssidsacls/GET-interfaces_wifi_ssids_acls.robot">
+<kw name="Run Keywords" library="BuiltIn" type="SETUP">
+<arg>Get API Reference Documentation</arg>
+<arg>${URI}</arg>
+<arg>${METHOD}</arg>
+<arg>AND</arg>
+<arg>Define ID Attributtes</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Get API Reference Documentation" library="documentation_analysis">
+<arg>${URI}</arg>
+<arg>${METHOD}</arg>
+<kw name="Find Desirable Status Code">
+<var>${EXPECTED_STATUS_CODE}</var>
+<arg>${URI}</arg>
+<arg>${METHOD}</arg>
+<msg timestamp="20221209 10:54:33.841" level="FAIL">No keyword with name 'Find Desirable Status Code' found.</msg>
+<status status="FAIL" starttime="20221209 10:54:33.841" endtime="20221209 10:54:33.841"/>
+</kw>
+<kw name="Find Desirable Response Headers">
+<var>${EXPECTED_HEADERS}</var>
+<arg>${URI}</arg>
+<arg>${METHOD}</arg>
+<status status="NOT RUN" starttime="20221209 10:54:33.849" endtime="20221209 10:54:33.849"/>
+</kw>
+<kw name="Find Desirable Request Headers">
+<var>${REQUIRED_HEADERS}</var>
+<arg>${URI}</arg>
+<arg>${METHOD}</arg>
+<status status="NOT RUN" starttime="20221209 10:54:33.854" endtime="20221209 10:54:33.855"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${METHOD}&quot; == &quot;DELETE&quot;">
+<kw name="Find Methods Available To Endpoint ${URI}">
+<var>${available_methods}</var>
+<status status="NOT RUN" starttime="20221209 10:54:33.859" endtime="20221209 10:54:33.859"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;POST&quot; in $available_methods">
+<kw name="Find Example Of Body">
+<var>${BODY_EXAMPLE}</var>
+<arg>${URI}</arg>
+<arg>POST</arg>
+<status status="NOT RUN" starttime="20221209 10:54:33.863" endtime="20221209 10:54:33.863"/>
+</kw>
+<kw name="Find Json Schema">
+<var>${JSON_SCHEMA}</var>
+<arg>${URI}</arg>
+<arg>POST</arg>
+<status status="NOT RUN" starttime="20221209 10:54:33.869" endtime="20221209 10:54:33.869"/>
+</kw>
+<status status="NOT RUN" starttime="20221209 10:54:33.859" endtime="20221209 10:54:33.869"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;PUT&quot; in $available_methods">
+<kw name="Find Example Of Body">
+<var>${BODY_EXAMPLE}</var>
+<arg>${URI}</arg>
+<arg>PUT</arg>
+<status status="NOT RUN" starttime="20221209 10:54:33.873" endtime="20221209 10:54:33.873"/>
+</kw>
+<kw name="Find Json Schema">
+<var>${JSON_SCHEMA}</var>
+<arg>${URI}</arg>
+<arg>PUT</arg>
+<status status="NOT RUN" starttime="20221209 10:54:33.877" endtime="20221209 10:54:33.877"/>
+</kw>
+<status status="NOT RUN" starttime="20221209 10:54:33.869" endtime="20221209 10:54:33.877"/>
+</branch>
+<status status="NOT RUN" starttime="20221209 10:54:33.859" endtime="20221209 10:54:33.877"/>
+</if>
+<status status="NOT RUN" starttime="20221209 10:54:33.855" endtime="20221209 10:54:33.877"/>
+</branch>
+<branch type="ELSE">
+<kw name="Find Example Of Body">
+<var>${BODY_EXAMPLE}</var>
+<arg>${URI}</arg>
+<arg>${METHOD}</arg>
+<status status="NOT RUN" starttime="20221209 10:54:33.881" endtime="20221209 10:54:33.881"/>
+</kw>
+<kw name="Find Json Schema">
+<var>${JSON_SCHEMA}</var>
+<arg>${URI}</arg>
+<arg>${METHOD}</arg>
+<status status="NOT RUN" starttime="20221209 10:54:33.886" endtime="20221209 10:54:33.886"/>
+</kw>
+<kw name="Mix Array Schema With Item Schema" library="documentation_analysis">
+<var>${JSON_SCHEMA}</var>
+<arg>${JSON_SCHEMA}</arg>
+<status status="NOT RUN" starttime="20221209 10:54:33.886" endtime="20221209 10:54:33.886"/>
+</kw>
+<status status="NOT RUN" starttime="20221209 10:54:33.877" endtime="20221209 10:54:33.886"/>
+</branch>
+<status status="NOT RUN" starttime="20221209 10:54:33.855" endtime="20221209 10:54:33.886"/>
+</if>
+<kw name="Organize Schema As List Of Items">
+<var>${ITEMS_LIST}</var>
+<arg>${JSON_SCHEMA}</arg>
+<status status="NOT RUN" starttime="20221209 10:54:33.890" endtime="20221209 10:54:33.890"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${EXPECTED_STATUS_CODE}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" starttime="20221209 10:54:33.890" endtime="20221209 10:54:33.890"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${EXPECTED_HEADERS}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" starttime="20221209 10:54:33.890" endtime="20221209 10:54:33.890"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${REQUIRED_HEADERS}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" starttime="20221209 10:54:33.890" endtime="20221209 10:54:33.890"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${JSON_SCHEMA}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" starttime="20221209 10:54:33.890" endtime="20221209 10:54:33.890"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${BODY_EXAMPLE}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" starttime="20221209 10:54:33.890" endtime="20221209 10:54:33.891"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${ITEMS_LIST}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" starttime="20221209 10:54:33.891" endtime="20221209 10:54:33.891"/>
+</kw>
+<status status="FAIL" starttime="20221209 10:54:33.834" endtime="20221209 10:54:33.891"/>
+</kw>
+<status status="FAIL" starttime="20221209 10:54:33.833" endtime="20221209 10:54:33.891"/>
+</kw>
+<test id="s1-t1" name="GET is Succeed" line="14">
+<tag>robot:continue-on-failure</tag>
+<status status="FAIL" starttime="20221209 10:54:33.891" endtime="20221209 10:54:33.892">Parent suite setup failed:
+No keyword with name 'Find Desirable Status Code' found.</status>
+</test>
+<test id="s1-t2" name="GET Without Authentication" line="21">
+<tag>robot:continue-on-failure</tag>
+<status status="FAIL" starttime="20221209 10:54:33.893" endtime="20221209 10:54:33.894">Parent suite setup failed:
+No keyword with name 'Find Desirable Status Code' found.</status>
+</test>
+<test id="s1-t3" name="GET With Empty Authentication" line="25">
+<tag>robot:continue-on-failure</tag>
+<status status="FAIL" starttime="20221209 10:54:33.895" endtime="20221209 10:54:33.896">Parent suite setup failed:
+No keyword with name 'Find Desirable Status Code' found.</status>
+</test>
+<test id="s1-t4" name="GET With Wrong Authentication" line="29">
+<tag>robot:continue-on-failure</tag>
+<status status="FAIL" starttime="20221209 10:54:33.897" endtime="20221209 10:54:33.899">Parent suite setup failed:
+No keyword with name 'Find Desirable Status Code' found.</status>
+</test>
+<status status="FAIL" starttime="20221209 10:54:33.724" endtime="20221209 10:54:33.901">Suite setup failed:
+No keyword with name 'Find Desirable Status Code' found.</status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="4" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="4" skip="0" id="s1" name="GET-interfaces wifi ssids acls">GET-interfaces wifi ssids acls</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20221209 10:54:33.820" level="ERROR">Error in file '/home/Leonel/QAP TA - Tests/api-v4-tests/resources/common_resource.resource' on line 8: Importing library 'RequestsLibrary' failed: ModuleNotFoundError: No module named 'RequestsLibrary'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  /home/Leonel/.local/bin
+  /usr/local/lib/python310.zip
+  /usr/local/lib/python3.10
+  /usr/local/lib/python3.10/lib-dynload
+  /home/Leonel/.local/lib/python3.10/site-packages
+  /usr/local/lib/python3.10/site-packages</msg>
+<msg timestamp="20221209 10:54:33.821" level="ERROR">Error in file '/home/Leonel/QAP TA - Tests/api-v4-tests/resources/common_resource.resource' on line 9: Importing library 'FakerLibrary' failed: ModuleNotFoundError: No module named 'FakerLibrary'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  /home/Leonel/.local/bin
+  /usr/local/lib/python310.zip
+  /usr/local/lib/python3.10
+  /usr/local/lib/python3.10/lib-dynload
+  /home/Leonel/.local/lib/python3.10/site-packages
+  /usr/local/lib/python3.10/site-packages</msg>
+<msg timestamp="20221209 10:54:33.823" level="ERROR">Error in file '/home/Leonel/QAP TA - Tests/api-v4-tests/resources/common_resource.resource' on line 10: Importing library '/home/Leonel/QAP TA - Tests/api-v4-tests/util/api_service.py' failed: ModuleNotFoundError: No module named 'jsonschema'
+Traceback (most recent call last):
+  File "/home/Leonel/QAP TA - Tests/api-v4-tests/util/api_service.py", line 1, in &lt;module&gt;
+    from jsonschema import Draft7Validator, draft7_format_checker
+PYTHONPATH:
+  /home/Leonel/QAP TA - Tests/api-v4-tests/util
+  /home/Leonel/.local/bin
+  /usr/local/lib/python310.zip
+  /usr/local/lib/python3.10
+  /usr/local/lib/python3.10/lib-dynload
+  /home/Leonel/.local/lib/python3.10/site-packages
+  /usr/local/lib/python3.10/site-packages</msg>
+<msg timestamp="20221209 10:54:33.831" level="ERROR">Error in file '/home/Leonel/QAP TA - Tests/api-v4-tests/resources/common_resource.resource' on line 11: Importing library '/home/Leonel/QAP TA - Tests/api-v4-tests/util/find_documentation_info.py' failed: ModuleNotFoundError: No module named 'requests'
+Traceback (most recent call last):
+  File "/home/Leonel/QAP TA - Tests/api-v4-tests/util/find_documentation_info.py", line 2, in &lt;module&gt;
+    import requests
+PYTHONPATH:
+  /home/Leonel/QAP TA - Tests/api-v4-tests/util
+  /home/Leonel/.local/bin
+  /usr/local/lib/python310.zip
+  /usr/local/lib/python3.10
+  /usr/local/lib/python3.10/lib-dynload
+  /home/Leonel/.local/lib/python3.10/site-packages
+  /usr/local/lib/python3.10/site-packages</msg>
+</errors>
+</robot>
