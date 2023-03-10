@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "api-v4-tests"
+version = "0.1.0"
+description = "Installation package with poetry"
+authors = ["Rafael Torres <rafaelbartorres@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+robotframework-faker = "^5.0.0"
+requests = "^2.28.1"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
